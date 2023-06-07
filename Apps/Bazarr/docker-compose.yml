@@ -1,7 +1,7 @@
 name: LinuxServer-Bazarr
 services:
   app:
-    image: linuxserver/bazarr:1.2.2-development
+    image: hotio/bazarr:nightly
     restart: unless-stopped
     environment:
       PUID: $PUID
@@ -41,10 +41,10 @@ services:
         source: /DATA/AppData/bazarr/config
         target: /config
       - type: bind
-        source: /DATA/AppData/bazarr/movies
+        source: /DATA/Media/Movies
         target: /movies
       - type: bind
-        source: /DATA/AppData/bazarr/tv
+        source: /DATA/Media/TV Shows
         target: /tv
 x-casaos:
   architectures:
@@ -53,7 +53,7 @@ x-casaos:
     - arm64
   main: app
   description:
-    en_us: 'Visit homepage: https://hub.docker.com/r/linuxserver/bazarr/'
+    en_us: 'Visit homepage: https://www.bazarr.media'
   tagline:
     en_us: A Companion Application To Sonarr And Radarr. It Can Manage And Download Subtitles Based On Your Requirements. You Define Your Preferences By Tv Show Or Movie And Bazarr Takes Care Of Everything For You.
   developer: LinuxServer.io
@@ -62,5 +62,5 @@ x-casaos:
   thumbnail: https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/bazarr.png
   title:
     en_us: Bazarr
-  category: LinuxServer.io
+  category: Media
   port_map: '6767'
