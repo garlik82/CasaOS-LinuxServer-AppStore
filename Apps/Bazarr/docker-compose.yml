@@ -1,4 +1,4 @@
-name: LinuxServer-Bazarr
+name: Bazarr
 services:
   app:
     image: hotio/bazarr:nightly
